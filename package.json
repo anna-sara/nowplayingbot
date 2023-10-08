@@ -16,7 +16,7 @@
     "youtube-search": "^1.0.10"
   },
   "engines": {
-    "node": "8.x"
+    "node": "18.x"
   },
   "license": "MIT",
   "keywords": [

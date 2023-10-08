@@ -3,7 +3,7 @@
 let fetch = require('node-fetch');
 let Masto = require('mastodon');
 let search = require('youtube-search');
-
+console.log(process.env.MASTODON_ACCESS_TOKEN);
 let tootLab = new Masto({
 	access_token: process.env.MASTODON_ACCESS_TOKEN,
 	api_url: process.env.MASTODON_API_URL
@@ -41,14 +41,14 @@ let checkWhatIsPlaying = () => {
 					console.log('YT search results:');
 					console.dir(results);
 					var videoUrl = results[0].link;
-					var newstatus = ':musical_note: #nowplaying #np #tootlabradio :musical_note:' + "\n\n";
+					var newstatus = ':ms_music_notes: #nowplaying #np :ms_music_notes:' + "\n\n";
 					newstatus += track.artist + ' - "' + track.title + '"' + "\n\n";
 
 					if (videoUrl.length > 0) {
 						newstatus += videoUrl + "\n\n";
 					}
 
-					newstatus += ':notes: ' + now_playing.url + ' :notes:';
+					newstatus += ':ms_music_notes: #whatsplaying :ms_music_notes:';
 
 					console.log('newstatus:');
 					console.log(newstatus);
